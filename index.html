@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--!propertis (خصائص)-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="desgn,logo,web design"><!--^keywords (الكلمات المفتاحية)-->
+    <meta name="description" content="description..."><!--^description (وصف الموقع)-->
+    <meta name="author" content="said idougrram">
+
+    <!--!facebook (فيسبوك)-->
+    <meta property="og:title" content="adate.com"><!--^web name (اسم الموقع)-->
+    <meta property="og:description" content="description..."><!--^description (وصف الموقع)-->
+    <meta property="og:url" content="https://www.adate.com"><!--^url web (رابط الموقع)-->
+    <meta property="og:type" content="website">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image" content=""><!--^url image (مسار الصورة) هذه الصورة تظهر عندما يقوم احدهم بنشر موقعك على فيسبوك قم بوضع الصورة داخل المجلد الذي يحتوي على صور الموقع ثم ضع مسار موقعك ثم اضف له src/img/اسم الصورة و صيغتها-->
+
+
+    <!--!twitter (تويتر)-->
+    <meta property="twitter:title" content="adate.com"><!--^web name (اسم الموقع)-->
+    <meta property="twitter:description" content="description..."><!--^description (وصف الموقع)-->
+    <meta property="twitter:card" content="summary-large-image">
+    <meta property="twitter:site" content="@username"><!--^twitter user (اسم المستخدم)-->
+    <meta property="twitter:creator" content="@said_idougrram">
+    <meta property="twitter:image" content=""><!--^url image (مسار الصورة) هذه الصورة تظهر عندما يقوم احدهم بنشر موقعك على تويتر قم بوضع الصورة داخل المجلد الذي يحتوي على صور الموقع ثم ضع مسار موقعك ثم اضف له src/img/اسم الصورة و صيغتها-->
+
+    <title>adate.com</title>
+</head>
+<body>
+    <script>
+        
+        const urlIndex = "";//متغير يحمل رابط الموقع لتسهيل التحكم بالملفات
+        //جلب قيمة المفتاح الذي يخزن اللغة المحفوظة
+        const lung = localStorage.getItem("KJ9ub__D_R8H6");//KJ9ub__D_R8H6 هو اسم المفتلح الذي يحمل قيمة اللغة المحفوظة
+        
+        
+        //كلاس يحمل اوامر الإنتقال الى الصفحة التي تحمل اللغة المطابقة
+        class Lung_onload{
+            constructor(){
+                if (lung == null)  {
+                    //اذا كان المفتاح KJ9ub__D_R8H6 غير موجود او لا يحمل قيمة
+                    //سيتم إنشاء مفتاح بهذا الإسم KJ9ub__D_R8H6 قيمته الأولية هي en اللغة الإنجليزية
+                    //ثم ينتقل الى الصفحة المترجمة بالغة الإنجليزية
+                    localStorage.setItem("KJ9ub__D_R8H6" , "en");
+                    location.replace(urlIndex + "en/index.html");
+                }else if (lung == "en") {
+                    //اذا كانة قيمة المفتاح KJ9ub__D_R8H6 هي en اللغة الإنجليزية
+                    //ثم ينتقل الى الصفحة المترجمة بالغة الإنجليزية
+                    location.replace(urlIndex + "en/index.html");
+                }else if (lung == "ar") {
+                    //اذا كانت قيمة المفتاح KJ9ub__D_R8H6 هي ar الغة العربية
+                    //سينتقل الى الصفحة المترجمة الى الغة العربية
+                    location.replace(urlIndex + "ar/index.html");
+                }else {
+                    //اذا كانت قيمة المفتاح KJ9ub__D_R8H6 غير en او ar
+                    //سيتم تغيير قيمته الى en
+                    //ثم يننقل الى الصفحة المترجمة باللغة الإنجليزية
+                    localStorage.setItem("KJ9ub__D_R8H6" , "en");
+                    location.replace(urlIndex + "en/index.html");
+                }
+            }
+        }
+        //استدعاء الكلاس Lung_onload عند تحميل الصفحة
+        onload = new Lung_onload();
+    </script>
+</body>
+</html>
