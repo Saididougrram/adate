@@ -2,7 +2,7 @@
 var web__propertys = {
     webTitle      : "adate.com | ar",
     webName       : "adate.com",
-    webUrl        : "https://saididougrram.github.io/adate/"
+    webUrl        : "../"
 }
 //* اعدادات التحكم بنصوص الموقع
 const web__scripts = {
